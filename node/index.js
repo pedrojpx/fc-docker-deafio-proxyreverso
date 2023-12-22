@@ -9,6 +9,12 @@ const config = {
 }
 const mysql = require('mysql')
 const select = `select name from nodedb.people;`
+const create = `create table if not exists people(id int not null auto_increment, name varchar(255), primary key (id))`
+
+const initconn = mysql.createConnection(config)
+initconn.query(create)
+initconn.end()
+
 
 const random_name = require('node-random-name')
 
@@ -27,7 +33,7 @@ app.get('/', (req,res) => {
         <h1>Full Cycle Rocks</h1>\
         <br><ul>' + names + '</ul></br>')
     })
-    connection.end
+    connection.end()
 })
 
 app.listen(port, () => {
