@@ -1,0 +1,1 @@
+olá corretor! Para remover os arquivos grandes precisei usar o bfg para mudar todo o histórico do projeto removendo a pasta mysql. Com isso talvez vc não consiga simplesmente fazer um pull no repositório, basta clonar de novo
